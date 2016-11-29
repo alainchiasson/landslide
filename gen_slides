@@ -5,12 +5,13 @@
 # This is a simple wrapper script that is meant to be run from the directory
 # that contains the slides.
 #
+# # Get the current working directory
 #
+# # Check if there is one file
+# #
 
-# Check if there is one file
 #
-
 # Check if the file is in the current directory / relative
 #
 
-docker run -it --rm -v `pwd`:/mnt -w /mnt alainchaisson/landslide landslide -v -i $1
+docker run -it --rm -v `pwd`:/mnt -w /mnt alainchaisson/landslide landslide -i $*
