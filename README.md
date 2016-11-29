@@ -10,7 +10,7 @@ How to use
 ----------
 
 See the following [presentation](https://rawgit.com/alainchiasson/landslide/master/presentation.html)
-This was generated from : [slides.hml]
+This was generated from : [slides.md](https://github.com/alainchiasson/landslide/blob/master/slides.md)
 
 NOTE
 ----
