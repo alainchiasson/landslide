@@ -9,8 +9,8 @@ following creates a docker container which contains the
 How to use
 ----------
 
-See the following presentation :
-This was generated from : []
+See the following [presentation](https://rawgit.com/alainchiasson/landslide/master/presentation.html)
+This was generated from : [slides.hml]
 
 NOTE
 ----
