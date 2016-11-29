@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Installs gen_slides to /usr/bin
+#
+echo "Do you wish to copy the gen_slides to your path (yes/NO)?"
+
+read answer
+
+if [ "$answer" == "yes" ]; then
+  cp gen_slides /usr/local/bin
+fi
