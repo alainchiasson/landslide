@@ -25,7 +25,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Landslide</title>
+    <title>Landslide Docker Wrapper</title>
     <!-- Styles -->
     
     <style type="text/css" media="print">
@@ -1301,8 +1301,10 @@ aside {
         <div class="slide slide-1">
           <div class="inner">
             
-            <header><h1>Landslide</h1></header>
+            <header><h1>Landslide Docker Wrapper</h1></header>
             
+            
+            <section><p>Using landslide without polluting your system</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1318,7 +1320,7 @@ aside {
             </aside>
             
             <aside class="page_number">
-              1/4
+              1/6
             </aside>
           </footer>
         </div>
@@ -1329,16 +1331,87 @@ aside {
         <div class="slide slide-2">
           <div class="inner">
             
-            <header><h1>Overview</h1></header>
+            <header><h1>What is landslide</h1></header>
             
             
-            <section><p>Generate HTML5 slideshows from markdown, ReST, or textile.</p>
-<p><img alt="python" src="http://i.imgur.com/bc2xk.png" /></p>
-<p>Landslide is primarily written in Python, but it's themes use:</p>
+            <section><p><a href="https://github.com/adamzap/landslide">Landslide</a> is a python
+application used to Generate HTML5 slideshows from markdown, ReST, or textile.</p>
+<p>Landslide is primarily written in Python, but it's themes use HTML5, Javascript
+, CSS</p>
+<p>It requires the installation of numerous python packages that may pollute your
+development space.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/6
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide slide-3">
+          <div class="inner">
+            
+            <header><h1>Why The Docker image</h1></header>
+            
+            
+            <section><p>This docker image contains everything required to perform the transformation</p>
+<p>It also includes an installable wrapper script to simplify the use.</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="slides.md">slides.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/6
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code slide-4">
+          <div class="inner">
+            
+            <header><h1>Using the Docker image</h1></header>
+            
+            
+            <section><p>To use the docker image:</p>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>docker run -it --rm -v <span class="sb">`</span><span class="nb">pwd</span><span class="sb">`</span>:/mnt <span class="se">\</span>
+<span class="lineno">2 </span>-w /mnt alainchaisson/landslide landslide -i file
+</pre></div>
+
 <ul>
-<li>HTML5</li>
-<li>Javascript</li>
-<li>CSS</li>
+<li>mount the current directory under /mnt</li>
+<li>set /mnt as the container working directory</li>
+<li><code>file</code> is the source file</li>
+<li>the <code>-i</code> option create a standalone slide presentation</li>
+<li>creates a <code>presentation.html</code> file in the working directory</li>
+<li>The working directory is mapped to the local directory</li>
 </ul></section>
             
           </div>
@@ -1355,7 +1428,7 @@ aside {
             </aside>
             
             <aside class="page_number">
-              2/4
+              4/6
             </aside>
           </footer>
         </div>
@@ -1363,21 +1436,17 @@ aside {
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide has_code slide-3">
+        <div class="slide has_code slide-5">
           <div class="inner">
             
-            <header><h1>Code Sample</h1></header>
+            <header><h1>gen_slides wrapper</h1></header>
             
             
-            <section><p>Landslide supports code snippets</p>
-<div class="highlight"><pre><span></span><span class="lineno">1 </span><span class="k">def</span> <span class="nf">log</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">message</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="s1">&#39;notice&#39;</span><span class="p">):</span>
-<span class="lineno">2 </span>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span> <span class="ow">and</span> <span class="ow">not</span> <span class="nb">callable</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">):</span>
-<span class="lineno">3 </span>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">u&quot;Invalid logger set, must be a callable&quot;</span><span class="p">)</span>
-<span class="lineno">4 </span>
-<span class="lineno">5 </span>    <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">verbose</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">:</span>
-<span class="lineno">6 </span>        <span class="bp">self</span><span class="o">.</span><span class="n">logger</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">level</span><span class="p">)</span>
+            <section><p>To simplify, there is a wrapper script called <code>gen_slides</code>:</p>
+<div class="highlight"><pre><span></span><span class="lineno">1 </span>gen_slides slides.md
 </pre></div>
-</section>
+
+<p>This will create the <code>presentaion.html</code> file in the current directory</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1393,7 +1462,7 @@ aside {
             </aside>
             
             <aside class="page_number">
-              3/4
+              5/6
             </aside>
           </footer>
         </div>
@@ -1401,13 +1470,18 @@ aside {
       
       <!-- slide source: slides.md -->
       <div class="slide-wrapper">
-        <div class="slide slide-4">
+        <div class="slide slide-6">
           <div class="inner">
             
-            <header><h1>Test</h1></header>
+            <header><h1>Additional information</h1></header>
             
             
-            <section><p>this is a test slide</p></section>
+            <section><ul>
+<li>Landslide : https://github.com/adamzap/landslide</li>
+<li>Landslide container : https://github.com/alainchiasson/landslide</li>
+<li>Docker hub Container : https://hub.docker.com/r/alainchiasson/landslide/</li>
+</ul>
+<p>Contact information : alain@chiasson.org</p></section>
             
           </div>
           <div class="presenter_notes">
@@ -1423,7 +1497,7 @@ aside {
             </aside>
             
             <aside class="page_number">
-              4/4
+              6/6
             </aside>
           </footer>
         </div>
@@ -1438,26 +1512,38 @@ aside {
       <caption>Table of Contents</caption>
       
       <tr id="toc-row-1">
-        <th><a href="#slide1">Landslide</a></th>
+        <th><a href="#slide1">Landslide Docker Wrapper</a></th>
         <td><a href="#slide1">1</a></td>
       </tr>
       
       
       <tr id="toc-row-2">
-        <th><a href="#slide2">Overview</a></th>
+        <th><a href="#slide2">What is landslide</a></th>
         <td><a href="#slide2">2</a></td>
       </tr>
       
       
       <tr id="toc-row-3">
-        <th><a href="#slide3">Code Sample</a></th>
+        <th><a href="#slide3">Why The Docker image</a></th>
         <td><a href="#slide3">3</a></td>
       </tr>
       
       
       <tr id="toc-row-4">
-        <th><a href="#slide4">Test</a></th>
+        <th><a href="#slide4">Using the Docker image</a></th>
         <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">gen_slides wrapper</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Additional information</a></th>
+        <td><a href="#slide6">6</a></td>
       </tr>
       
       

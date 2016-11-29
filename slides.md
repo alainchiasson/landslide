@@ -1,35 +1,61 @@
-# Landslide
+# Landslide Docker Wrapper
+
+Using landslide without polluting your system
 
 ---
 
-# Overview
+# What is landslide
 
-Generate HTML5 slideshows from markdown, ReST, or textile.
+[Landslide](https://github.com/adamzap/landslide) is a python
+application used to Generate HTML5 slideshows from markdown, ReST, or textile.
 
-![python](http://i.imgur.com/bc2xk.png)
+Landslide is primarily written in Python, but it's themes use HTML5, Javascript
+, CSS
 
-Landslide is primarily written in Python, but it's themes use:
+It requires the installation of numerous python packages that may pollute your
+development space.
+---
+# Why The Docker image
 
-- HTML5
-- Javascript
-- CSS
+This docker image contains everything required to perform the transformation
+
+It also includes an installable wrapper script to simplify the use.
 
 ---
 
-# Code Sample
+# Using the Docker image
 
-Landslide supports code snippets
+To use the docker image:
 
-    !python
-    def log(self, message, level='notice'):
-        if self.logger and not callable(self.logger):
-            raise ValueError(u"Invalid logger set, must be a callable")
+    !bash
+    docker run -it --rm -v `pwd`:/mnt \
+    -w /mnt alainchaisson/landslide landslide -i file
 
-        if self.verbose and self.logger:
-            self.logger(message, level)
+- mount the current directory under /mnt
+- set /mnt as the container working directory
+- `file` is the source file
+- the `-i` option create a standalone slide presentation
+- creates a `presentation.html` file in the working directory
+- The working directory is mapped to the local directory
 
 ---
 
-# Test
+# gen_slides wrapper
 
-this is a test slide
+To simplify, there is a wrapper script called `gen_slides`:
+
+    !bash
+    gen_slides slides.md
+
+This will create the `presentaion.html` file in the current directory
+
+
+---
+
+# Additional information
+
+- Landslide : https://github.com/adamzap/landslide
+- Landslide container : https://github.com/alainchiasson/landslide
+- Docker hub Container : https://hub.docker.com/r/alainchiasson/landslide/
+
+Contact information : alain@chiasson.org
