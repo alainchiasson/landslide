@@ -1,0 +1,16 @@
+#!/bin/bash
+#
+
+#
+# This is a simple wrapper script that is meant to be run from the directory
+# that contains the slides.
+#
+#
+
+# Check if there is one file
+#
+
+# Check if the file is in the current directory / relative
+#
+
+docker run -it --rm -v `pwd`:/mnt -w /mnt alainchaisson/landslide landslide $1
