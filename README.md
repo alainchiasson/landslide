@@ -18,3 +18,20 @@ I did find a
 container, [ptisserand/landslide](https://hub.docker.com/r/ptisserand/landslide/)
 but it was missing the watch. So as both a service and an
 excercise I rebuilt a new one.
+
+TODO
+----
+
+Slide themes to be integrated - install in specific location. print out help.
+
+- https://github.com/akrabat/avalanche : https://akrabat.com/introducing-avalance-a-landslide-presentations-theme/
+
+- https://github.com/Kaljurand/landslide-themes
+- https://github.com/machinalis/slides/tree/master/landslide-theme
+- http://readme-go.appspot.com/info/landslide
+- https://pypi.python.org/pypi/darkslide (is there a theme to pull out of this?)
+
+Also this is based on : https://code.google.com/archive/p/html5slides/
+Original Author's site : http://adamzap.com/ He seems to be doing a full rewrite.
+
+Would it make sense to integrate an ONBUILD directive ? 
