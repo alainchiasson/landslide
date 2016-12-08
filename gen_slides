@@ -14,4 +14,4 @@
 # Check if the file is in the current directory / relative
 #
 
-docker run -it --rm -v `pwd`:/mnt -w /mnt alainchaisson/landslide landslide -i $*
+docker run -it --rm -v `pwd`:/mnt -w /mnt alainchiasson/landslide landslide -i $*
