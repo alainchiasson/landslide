@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('BuildImage') {
       steps {
-        sh './build'
+        sh '''echo $PATH
+'''
       }
     }
   }
