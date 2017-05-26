@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('BuildImage') {
       steps {
-        sh 'pwd'
+        sh '''PATH='/usr/local/bin'
+
+./build'''
       }
     }
   }
