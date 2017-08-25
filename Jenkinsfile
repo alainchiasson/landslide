@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('BuildImage') {
       steps {
-        sh 'sudo ./build'
+        sh 'sudo docker build -t alainchiasson/landslide .'
       }
     }
   }
