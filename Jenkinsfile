@@ -7,7 +7,7 @@ pipeline {
                 label 'docker'
             }
             steps {
-                sh 'docker build -t landslide .'
+                sh 'sudo docker build -t landslide .'
             }
         }
         stage('Test') {
