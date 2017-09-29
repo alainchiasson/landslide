@@ -3,7 +3,6 @@ pipeline {
   stages {
     stage {
       agent { 
-        dockerfile true
           label 'docker'
         }
         steps {
