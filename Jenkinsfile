@@ -5,10 +5,9 @@ pipeline {
         stage('Build') {
             agent {
                 label 'docker'
-                dockerfile 'true'
             }
             steps {
-                echo 'Building..'
+                sh 'docker built -t landslide .'
             }
         }
         stage('Test') {
