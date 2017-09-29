@@ -3,6 +3,10 @@ pipeline {
 
     stages {
         stage('Build') {
+            agent {
+                label 'docker'
+                dockerfile 'true'
+            }
             steps {
                 echo 'Building..'
             }
