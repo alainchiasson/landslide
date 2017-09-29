@@ -7,8 +7,8 @@ pipeline {
                 label 'docker'
             }
             steps {
-                sh 'sudo build'
-                sh 'sudo push'
+                sh 'sudo ./build'
+                sh 'sudo ./push'
             }
         }
         stage('Test') {
