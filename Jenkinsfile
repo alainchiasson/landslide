@@ -1,12 +1,14 @@
 pipeline {
- /* decalrative definition here */
-    agent none 
-    stages {
-        stage {
-            agent { 
-                dockerfile true
-                label 'docker'
-            }
+  agent none 
+  stages {
+    stage {
+      agent { 
+        dockerfile true
+          label 'docker'
         }
-    }
+        steps {
+          echo "Hello"
+        }
+     }
+  }
 }
